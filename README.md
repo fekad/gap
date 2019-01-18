@@ -1,2 +1,0 @@
-# gap
-Wrapper for GAP
