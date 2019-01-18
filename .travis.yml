@@ -20,22 +20,11 @@ before_install:
   - conda info -a
 
 install:
-  # Replace dep1 dep2 ... with your dependenciestravi
-  #- conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION dep1 dep2 ...
-
-  - conda env create -f gap-dev-env.yml
-  - source activate gap-dev-env
-
-  #- python setup.py install
+  - conda env create -f docs/docs-env.yml
+  - source activate docs-env
 
 script:
   - cd docs; make html
-
-#script:
-#    - travis-sphinx build
-#
-#after_success:
-#    - travis-sphinx deploy
 
 deploy:
   provider: pages

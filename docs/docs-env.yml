@@ -1,4 +1,4 @@
-name: gap-dev-env
+name: docs-env
 channels:
   - conda-forge
   - defaults
