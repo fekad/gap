@@ -7,5 +7,6 @@ dependencies:
   - pip
   - sphinx
   - pip:
+    - travis-sphinx
     - sphinx-rtd-theme
 
