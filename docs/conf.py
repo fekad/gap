@@ -42,7 +42,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
-    # 'sphinx.ext.githubpages',
+    'sphinx.ext.githubpages',
 ]
 
 # Napoleon settings

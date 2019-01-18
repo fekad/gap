@@ -1,0 +1,12 @@
+name: gap-dev-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.6
+  - pip
+  - sphinx
+  - pip:
+    - travis-sphinx
+    - sphinx-rtd-theme
+
