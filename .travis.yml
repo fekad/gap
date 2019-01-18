@@ -39,6 +39,7 @@ script:
 
 deploy:
   provider: pages
+  local_dir: docs/_build/html
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
