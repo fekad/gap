@@ -1,36 +1,26 @@
 language: python
-branches:
-  only:
-    - master
 python:
   - "3.6"
-sudo: false
-before_install:
-  - sudo apt-get update
+script: skip
 
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-
-  # Useful for debugging any issues with conda
-  - conda info -a
-
-install:
-  - conda env create -f docs/docs-env.yml
-  - source activate docs-env
-
-script:
-  - cd docs; make html
-
-deploy:
-  provider: pages
-  local_dir: docs/_build/html
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  on:
-    branch: master
+jobs:
+  include:
+    - stage: genretating documentaion
+      python:
+        - "3.6"
+      branches:
+        only:
+          - master
+      install:
+        - pip install sphinx sphinx-rtd-theme
+      #  - pip install .
+      script:
+        - cd docs; make html
+      deploy:
+        provider: pages
+        local_dir: docs/_build/html
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep-history: true
+        on:
+          branch: master
