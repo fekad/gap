@@ -5,8 +5,8 @@ Learning GAP
 
 Python wrapper for the teach_sparse program
 
-Gaussian Approximation Potentials (GAP)
----------------------------------------
+Gaussian Approximation Potentials
+---------------------------------
 
 .. autoclass:: gap.GAP
    :members:
